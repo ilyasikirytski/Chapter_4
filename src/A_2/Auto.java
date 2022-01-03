@@ -4,10 +4,10 @@ public class Auto extends Wheel{
     private final String brand;
     Engine engine;
 
-    public Auto(String brand , int wheels, boolean x) {
+    public Auto(String brand , int wheels, boolean isRefueling) {
         super(wheels);
         this.brand = brand;
-        engine = new Engine(x);
+        engine = new Engine(isRefueling);
     }
 
     public void printBrand() {
