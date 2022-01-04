@@ -20,7 +20,7 @@ public class Main {
         flowers.addFlower("Clower", 11, 2, 2);
 
         flowers.printAllFlowers();
-        flowers.findFlowersByStemLength(12, 31);
-        flowers.sortByFreshnessLevel(3);
+        flowers.sortFlowersByStemLength(12, 31);
+        flowers.sortFlowersByFreshnessLevel(3);
     }
 }

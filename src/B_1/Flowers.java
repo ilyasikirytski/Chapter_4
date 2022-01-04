@@ -35,7 +35,7 @@ public class Flowers {
         }
     }
 
-    public void sortByFreshnessLevel(int freshnessLevel){
+    public void sortFlowersByFreshnessLevel(int freshnessLevel){
         System.out.printf("----------------------------------------%nЦветы подпадающие под критерии свежести :%n");
         for (GardenFlowers g : gardenFlowers){
             if (g.getFreshnessLevel() == freshnessLevel){
@@ -60,7 +60,7 @@ public class Flowers {
 
     }
 
-    public void findFlowersByStemLength(int stemLengthFrom, int stemLengthTo) {
+    public void sortFlowersByStemLength(int stemLengthFrom, int stemLengthTo) {
         System.out.printf("----------------------------------------%nЦветы подпадающие под критерии длинны стебля :%n");
         for (GardenFlowers g : gardenFlowers) {
             if (g.getStemLength() >= stemLengthFrom && g.getStemLength() < stemLengthTo) {
