@@ -33,4 +33,15 @@ public class WildFlowers extends Flowers {
     public int getStemLength() {
         return stemLength;
     }
+
+    @Override
+    public String toString() {
+        return "WildFlowers{" +
+                "type='" + type + '\'' +
+                ", name='" + name + '\'' +
+                ", stemLength=" + stemLength +
+                ", price=" + price +
+                ", freshnessLevel=" + freshnessLevel +
+                '}';
+    }
 }

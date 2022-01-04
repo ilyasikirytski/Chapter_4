@@ -20,18 +20,10 @@ public class Flowers {
     public void printAllFlowers() {
         System.out.printf("----------------------------------------%nСписок всех добавленных цветов :%n");
         for (GardenFlowers g : gardenFlowers) {
-            System.out.println("type " + g.getType() +
-                    " name ='" + g.getName() + '\'' +
-                    ", stemLength =" + g.getStemLength() +
-                    ", price =" + g.getPrice() +
-                    '}');
+            System.out.println(g);
         }
         for (WildFlowers w : wildFlowers) {
-            System.out.println("type " + w.getType() +
-                    " name ='" + w.getName() + '\'' +
-                    ", stemLength =" + w.getStemLength() +
-                    ", price =" + w.getPrice() +
-                    '}');
+            System.out.println(w);
         }
     }
 
@@ -39,22 +31,12 @@ public class Flowers {
         System.out.printf("----------------------------------------%nЦветы подпадающие под критерии свежести :%n");
         for (GardenFlowers g : gardenFlowers){
             if (g.getFreshnessLevel() == freshnessLevel){
-                System.out.println("type " + g.getType() +
-                        " name ='" + g.getName() + '\'' +
-                        ", stemLength =" + g.getStemLength() +
-                        ", price =" + g.getPrice() +
-                        ", Freshness Level =" + g.getFreshnessLevel() +
-                        '}');
+                System.out.println(g);
             }
         }
         for (WildFlowers w : wildFlowers) {
             if (w.getFreshnessLevel() == freshnessLevel) {
-                System.out.println("type " + w.getType() +
-                        " name ='" + w.getName() + '\'' +
-                        ", stemLength =" + w.getStemLength() +
-                        ", price =" + w.getPrice() +
-                        ", Freshness Level =" + w.getFreshnessLevel() +
-                        '}');
+                System.out.println(w);
             }
         }
 
@@ -64,20 +46,12 @@ public class Flowers {
         System.out.printf("----------------------------------------%nЦветы подпадающие под критерии длинны стебля :%n");
         for (GardenFlowers g : gardenFlowers) {
             if (g.getStemLength() >= stemLengthFrom && g.getStemLength() < stemLengthTo) {
-                System.out.println("type " + g.getType() +
-                        " name ='" + g.getName() + '\'' +
-                        ", stemLength =" + g.getStemLength() +
-                        ", price =" + g.getPrice() +
-                        '}');
+                System.out.println(g);
             }
         }
         for (WildFlowers w : wildFlowers) {
             if (w.getStemLength() >= stemLengthFrom && w.getStemLength() < stemLengthTo) {
-                System.out.println("type " + w.getType() +
-                        " name ='" + w.getName() + '\'' +
-                        ", stemLength =" + w.getStemLength() +
-                        ", price =" + w.getPrice() +
-                        '}');
+                System.out.println(w);
             }
         }
     }

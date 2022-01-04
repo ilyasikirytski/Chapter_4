@@ -33,4 +33,15 @@ public class GardenFlowers extends Flowers {
     public int getStemLength() {
         return stemLength;
     }
+
+    @Override
+    public String toString() {
+        return "GardenFlowers{" +
+                "type='" + type + '\'' +
+                ", name='" + name + '\'' +
+                ", stemLength=" + stemLength +
+                ", price=" + price +
+                ", freshnessLevel=" + freshnessLevel +
+                '}';
+    }
 }
