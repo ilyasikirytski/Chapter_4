@@ -4,6 +4,7 @@
  */
 package A_1;
 
+// TODO форматирование кода (пробелы, запятые и тд)
 public class Main {
     public static void main(String[] args) {
         Word header = new Word("hello");

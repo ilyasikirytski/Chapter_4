@@ -1,5 +1,6 @@
 package A_1;
 
+// TODO форматирование кода (пробелы, запятые и тд)
 public class Word {
     private String word;
 

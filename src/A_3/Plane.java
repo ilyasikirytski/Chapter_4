@@ -1,11 +1,13 @@
 package A_3;
 
+// TODO форматирование кода (пробелы, запятые и тд)
 public class Plane {
     private String route;
     private Wing wing;
     private Engine engine;
     private Chassis chassis;
 
+    // TODO через конструктор должны передаваться сразу обекты, смотри Dependency Injection
     public Plane(boolean wing, boolean engine, boolean chassis) {
         this.wing = new Wing(wing);
         this.engine = new Engine(engine);

@@ -2,6 +2,7 @@ package A_2;
 
 import java.util.SortedMap;
 
+// TODO форматирование кода (пробелы, запятые и тд)
 public class Engine {
     private boolean isRefueling;
 
