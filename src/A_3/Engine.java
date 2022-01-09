@@ -1,20 +1,17 @@
 package A_3;
 
-// TODO форматирование кода (пробелы, запятые и тд)
 public class Engine {
-    // TODO в чем смысл поля?
-    boolean engine;
+    private final int enginePower;
 
-    public Engine(boolean engine) {
-        this.engine = engine;
+    public Engine(int enginePower) {
+        this.enginePower = enginePower;
     }
 
-    // TODO а нельзя просто вернуть engine??)))
-    // TODO почему у двигателя проверка на двигатель?
-    public boolean haveEngines() {
-        if (engine) {
-            return true;
-        }
-        return false;
+    public boolean isWorking() {
+        return true;
+    }
+
+    public int enginesInfo() {
+        return enginePower;
     }
 }

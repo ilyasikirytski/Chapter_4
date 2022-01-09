@@ -1,20 +1,17 @@
 package A_3;
 
-// TODO форматирование кода (пробелы, запятые и тд)
 public class Wing {
-    // TODO в чем смысл поля?
-    boolean wings;
+    private final int wingSpan;
 
-    public Wing(boolean wings) {
-        this.wings = wings;
+    public Wing(int wingSpan) {
+        this.wingSpan = wingSpan;
     }
 
-    // TODO а нельзя просто вернуть engine??)))
-    // TODO почему у Wing проверка на Wing?
-    public boolean haveWings() {
-        if (wings) {
-            return true;
-        }
-        return false;
+    public boolean isWorking() {
+        return true;
+    }
+
+    public int wingsInfo() {
+        return wingSpan;
     }
 }

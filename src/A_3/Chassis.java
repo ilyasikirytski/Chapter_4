@@ -1,20 +1,17 @@
 package A_3;
 
-// TODO форматирование кода (пробелы, запятые и тд)
 public class Chassis {
-    // TODO в чем смысл поля?
-    private boolean chassis;
+    private final String chassisType;
 
-    public Chassis(boolean chassis) {
-        this.chassis = chassis;
+    public Chassis(String chassisType) {
+        this.chassisType = chassisType;
     }
 
-    // TODO а нельзя просто вернуть chassis??)))
-    // TODO почему у Chassis проверка на Chassis?
-    public boolean haveChassis() {
-        if (chassis) {
-            return true;
-        }
-        return false;
+    public boolean isWorking() {
+        return true;
+    }
+
+    public String chassisInfo() {
+        return chassisType;
     }
 }
