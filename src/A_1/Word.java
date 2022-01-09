@@ -1,6 +1,5 @@
 package A_1;
 
-// TODO форматирование кода (пробелы, запятые и тд)
 public class Word {
     private String word;
 
@@ -8,7 +7,10 @@ public class Word {
         this.word = word;
     }
 
-    public String getWord() {
-        return word;
+    @Override
+    public String toString() {
+        return "Word{" +
+                "word='" + word + '\'' +
+                '}';
     }
 }

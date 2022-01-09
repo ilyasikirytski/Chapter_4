@@ -3,29 +3,19 @@ package A_1;
 // TODO Text это список предложений, а не строки, хедер тоже или слово и предложение + переопределить
 //  toString вместо getHeader\getBody (или переименовать как getString)
 
-// TODO форматирование кода (пробелы, запятые и тд)
+import java.util.ArrayList;
+
 public class Text {
-    // TODO private?
-    String header;
-    String body = "";
+    private final ArrayList<String> listOfSentence = new ArrayList<>();
 
-    public Text(Word word){
-        header = word.getWord();
+    public Text(String sentence) {
+        listOfSentence.add(sentence);
     }
 
-    public void addHeader(Word word){
-        body += " " + word.getWord();
-    }
-
-    public void addBody(Sentence sentence){
-        body += " " + sentence.getSentence();
-    }
-
-    public String getHeader() {
-        return header;
-    }
-
-    public String getBody() {
-        return body;
+    @Override
+    public String toString() {
+        return "Text{" +
+                "text=" + listOfSentence +
+                '}';
     }
 }

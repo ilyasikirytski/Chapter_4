@@ -3,15 +3,19 @@ package A_1;
 // TODO Sentence это список слов, а не стринга + переопределить toString
 //  вместо getSentence (или переименовать как getString)
 
-// TODO форматирование кода (пробелы, запятые и тд)
-public class Sentence {
-    private String value = "";
+import java.util.ArrayList;
 
-    public void addWord(Word word){
-        value = value + " " + word.getWord();
+public class Sentence {
+    private final ArrayList<String> listOfWords = new ArrayList<>();
+
+    public Sentence(String word) {
+        listOfWords.add(word);
     }
 
-    public String getSentence() {
-        return value;
+    @Override
+    public String toString() {
+        return "Sentence{" +
+                "words=" + listOfWords +
+                '}';
     }
 }
