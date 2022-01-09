@@ -1,15 +1,17 @@
 package A_2;
 
-// TODO форматирование кода (пробелы, запятые и тд)
-// TODO одно колесо, убрать количество
-public class Wheel{
-    private final int countOfWheels;
+public class Wheel {
+    private int size;
 
-    public Wheel(int numberOfWheels) {
-        this.countOfWheels = numberOfWheels;
+    public Wheel(int size) {
+        this.size = size;
     }
 
-    public int getCountOfWheels() {
-        return countOfWheels;
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 }

@@ -1,18 +1,13 @@
 package A_2;
 
-import java.util.SortedMap;
-
-// TODO форматирование кода (пробелы, запятые и тд)
 public class Engine {
-    private boolean isRefueling;
+    private final int horsePower;
 
-    public Engine(boolean isRefueling) {
-        this.isRefueling = isRefueling;
+    public Engine(int horsePower) {
+        this.horsePower = horsePower;
     }
 
-    public void isRefueling(){
-        if (isRefueling){
-            System.out.println("Машина заправлена");
-        } else System.out.println("Нужна заправка");
+    public int getHorsePower() {
+        return horsePower;
     }
 }

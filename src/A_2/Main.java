@@ -5,14 +5,24 @@
 
 package A_2;
 
-// TODO форматирование кода (пробелы, запятые и тд)
-// TODO добавить наследование
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        Auto auto = new Auto("Ford", 2, false);
-        auto.printBrand();
-        auto.drive();
-        auto.changeWheel();
-        auto.engine.isRefueling();
+        ArrayList<Wheel> wheels = new ArrayList<>();
+        wheels.add(new Wheel(16));
+        wheels.add(new Wheel(15));
+        wheels.add(new Wheel(16));
+        wheels.add(new Wheel(15));
+
+        Engine engine = new Engine(150);
+        Auto car = new Auto("Ford", wheels, engine, 20);
+        car.drive();
+        car.drive();
+        car.refuel();
+        car.checkWheels();
+        car.changeWheel();
+        car.checkWheels();
+        car.getCarInfo();
     }
 }

@@ -1,34 +1,52 @@
 package A_2;
 
-// TODO форматирование кода (пробелы, запятые и тд)
-// TODO убрать наследование между колесом и машиной, колеса внутри машины как и двигатель
-public class Auto extends Wheel{
+import java.util.ArrayList;
+
+public class Auto {
     private final String brand;
-    // TODO private? у машины метод заправлена или нет - инкапсуляция
-    Engine engine;
+    private final ArrayList<Wheel> wheels;
+    private final Engine engine;
+    private int countOfFuel;
 
-    // TODO двигатель должен передаваться через конструктор, смотри Dependency Injection
-    public Auto(String brand , int wheels, boolean isRefueling) {
-        super(wheels);
+    public Auto(String brand, ArrayList<Wheel> wheels, Engine engine, int countOfFuel) {
         this.brand = brand;
-        engine = new Engine(isRefueling);
+        this.wheels = wheels;
+        this.engine = engine;
+        this.countOfFuel = countOfFuel;
     }
 
-    public void printBrand() {
-        System.out.println("Марка авто - " + brand);
-    }
-
-    // TODO убрать проверку на количество колес
     public void drive() {
-        if (super.getCountOfWheels() == 4) {
-            System.out.println("Машина едет");
+        if (countOfFuel <= 0) {
+            System.out.println("Нужно заправиться");
         } else {
-            System.out.println("Колеса должно быть 4");
+            countOfFuel -= 20;
+            System.out.println(brand + " едет! - Потрачено 20% топлива! Остаток в баке: " + countOfFuel);
         }
     }
 
-    // TODO передать колесо в качестве параметра метода, поменять колесо внутри машины (поле) на это
+    public void refuel() {
+        countOfFuel = 100;
+        System.out.println("Машина успешно заправлена!");
+    }
+
+    public void checkWheels() {
+        for (int i = 0; i < wheels.size(); i++) {
+            System.out.println("Колесо " + (i + 1) + " размер: " + wheels.get(i).getSize());
+        }
+    }
+
     public void changeWheel() {
+        for (Wheel w : wheels) {
+            if (w.getSize() < 16) {
+                w.setSize(16);
+            }
+        }
         System.out.println("Колесо поменяно!");
+    }
+
+    public void getCarInfo() {
+        System.out.printf("Марка авто: %s%n" +
+                "Мощность: %s%n" +
+                "Объём бака: %s%n", brand, engine.getHorsePower(), countOfFuel);
     }
 }
