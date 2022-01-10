@@ -21,7 +21,7 @@ public class Main {
         car.drive();
         car.refuel();
         car.checkWheels();
-        car.changeWheel();
+        car.changeWheel(new Wheel(16), 3);
         car.checkWheels();
         car.getCarInfo();
     }

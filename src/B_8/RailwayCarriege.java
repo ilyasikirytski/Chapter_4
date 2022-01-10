@@ -1,10 +1,10 @@
 package B_8;
 
-public class Vagons {
+public class RailwayCarriege {
     private int comfortLevel;
     private int passengersCapacity;
 
-    public Vagons(int comfortLevel, int passengersCapacity) {
+    public RailwayCarriege(int comfortLevel, int passengersCapacity) {
         this.comfortLevel = comfortLevel;
         this.passengersCapacity = passengersCapacity;
     }
@@ -19,7 +19,7 @@ public class Vagons {
 
     @Override
     public String toString() {
-        return "Vagons{" +
+        return "RailwayCarriege{" +
                 "comfortLevel=" + comfortLevel +
                 ", passengersCapacity=" + passengersCapacity +
                 '}';

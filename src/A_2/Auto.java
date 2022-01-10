@@ -35,12 +35,8 @@ public class Auto {
         }
     }
 
-    public void changeWheel() {
-        for (Wheel w : wheels) {
-            if (w.getSize() < 16) {
-                w.setSize(16);
-            }
-        }
+    public void changeWheel(Wheel w, int index) {
+        wheels.set(index, w);
         System.out.println("Колесо поменяно!");
     }
 

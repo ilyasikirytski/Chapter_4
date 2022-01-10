@@ -6,10 +6,27 @@ package A_1;
 import java.util.ArrayList;
 
 public class Text {
-    private final ArrayList<String> listOfSentence = new ArrayList<>();
+    private final ArrayList<Sentence> listOfSentence;
+    private Word header;
 
-    public Text(String sentence) {
-        listOfSentence.add(sentence);
+    public Text() {
+        listOfSentence = new ArrayList<>();
+    }
+
+    public Text(ArrayList<Sentence> sentence) {
+        listOfSentence = sentence;
+    }
+
+    public void addSentence(Sentence s) {
+        listOfSentence.add(s);
+    }
+
+    public void setHeader(Word w) {
+        header = w;
+    }
+
+    public Word getHeader() {
+        return header;
     }
 
     @Override

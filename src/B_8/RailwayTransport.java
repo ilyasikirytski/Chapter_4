@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class RailwayTransport {
     private ArrayList<PassengerTrain> passengerTrains = new ArrayList<>();
     private ArrayList<CargoTrain> cargoTrains = new ArrayList<>();
-    private ArrayList<Vagons> vagons = new ArrayList<>();
+    private ArrayList<RailwayCarriege> vagons = new ArrayList<>();
 
     public RailwayTransport() {
     }
@@ -19,12 +19,12 @@ public class RailwayTransport {
     }
 
     public void addVagons(int comfortLevel, int passengersCapacity) {
-        vagons.add(new Vagons(comfortLevel, passengersCapacity));
+        vagons.add(new RailwayCarriege(comfortLevel, passengersCapacity));
     }
 
     public void sortVagonsByPassengersCapacity(int capacity) {
         System.out.printf("----------------------------------------%nВагоны подпадающие под указанную вместительность :%n");
-        for (Vagons v : vagons) {
+        for (RailwayCarriege v : vagons) {
             if (v.getPassengersCapacity() == capacity) {
                 System.out.println(v);
             }
@@ -33,7 +33,7 @@ public class RailwayTransport {
 
     public void sortVagonsByComfort(int comfortLevel) {
         System.out.printf("----------------------------------------%nВагоны подпадающие под уровень комфорта :%n");
-        for (Vagons v : vagons) {
+        for (RailwayCarriege v : vagons) {
             if (v.getComfortLevel() == comfortLevel) {
                 System.out.println(v);
             }

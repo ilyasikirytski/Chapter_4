@@ -6,10 +6,18 @@ package A_1;
 import java.util.ArrayList;
 
 public class Sentence {
-    private final ArrayList<String> listOfWords = new ArrayList<>();
+    private final ArrayList<Word> listOfWords;
 
-    public Sentence(String word) {
-        listOfWords.add(word);
+    public Sentence() {
+        listOfWords = new ArrayList<>();
+    }
+
+    public Sentence(ArrayList<Word> word) {
+        listOfWords = word;
+    }
+
+    public void addWord(Word w) {
+        listOfWords.add(w);
     }
 
     @Override

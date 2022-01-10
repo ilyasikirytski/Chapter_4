@@ -20,10 +20,12 @@ public class Main {
         words.add(word3);
         words.add(word4);
         words.add(word5);
-        Sentence sentence = new Sentence(words.toString());
-        Text text = new Text(sentence.toString());
+        Sentence sentence = new Sentence(words);
+        Text text = new Text();
+        text.addSentence(sentence);
+        text.setHeader(word1);
 
-        System.out.println("Заголовок :" + sentence);
+        System.out.println("Заголовок :" + text.getHeader());
         System.out.println("Текст :" + text);
     }
 }
