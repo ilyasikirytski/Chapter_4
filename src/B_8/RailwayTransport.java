@@ -18,11 +18,11 @@ public class RailwayTransport {
         }
     }
 
-    public void addVagons(int comfortLevel, int passengersCapacity){
+    public void addVagons(int comfortLevel, int passengersCapacity) {
         vagons.add(new Vagons(comfortLevel, passengersCapacity));
     }
 
-    public void sortVagonsByPassengersCapacity(int capacity){
+    public void sortVagonsByPassengersCapacity(int capacity) {
         System.out.printf("----------------------------------------%nВагоны подпадающие под указанную вместительность :%n");
         for (Vagons v : vagons) {
             if (v.getPassengersCapacity() == capacity) {

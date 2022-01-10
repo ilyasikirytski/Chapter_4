@@ -27,10 +27,10 @@ public class Flowers {
         }
     }
 
-    public void sortFlowersByFreshnessLevel(int freshnessLevel){
+    public void sortFlowersByFreshnessLevel(int freshnessLevel) {
         System.out.printf("----------------------------------------%nЦветы подпадающие под критерии свежести :%n");
-        for (GardenFlowers g : gardenFlowers){
-            if (g.getFreshnessLevel() == freshnessLevel){
+        for (GardenFlowers g : gardenFlowers) {
+            if (g.getFreshnessLevel() == freshnessLevel) {
                 System.out.println(g);
             }
         }
