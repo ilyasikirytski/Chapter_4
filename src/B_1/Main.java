@@ -11,6 +11,8 @@ package B_1;
 import java.util.Scanner;
 
 public class Main {
+    // TODO вынести каждый case в отдельную функцию
+    //  - зачем несколько сканнеров? почему с такими странными названияни?
     public static void main(String[] args) {
         Flowers flowers = new Flowers();
         Scanner scanner = new Scanner(System.in);

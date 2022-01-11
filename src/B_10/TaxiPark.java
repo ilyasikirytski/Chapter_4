@@ -6,10 +6,12 @@ public class TaxiPark {
     private int parkValue;
     private ArrayList<Car> cars = new ArrayList<>();
 
+    // TODO - опять же как и в цветах, добавляешь машину а не ее параметры
     public void addCar(int fuelConsumption, int carPrice, int maxSpeed) {
         cars.add(new Car(fuelConsumption, carPrice, maxSpeed));
     }
 
+    // TODO - почему parkValue как параметр класса? а что если несколько раз вызову этот метод? проверь)
     public void getParkValue() {
         for (Car c : cars) {
             parkValue += c.getCarPrice();
@@ -17,6 +19,7 @@ public class TaxiPark {
         System.out.println("Стоимость таксопарка составляет = " + parkValue + " долларов");
     }
 
+    // TODO должна быть или сортировка внутри или другое название метода
     public void sortCarByFuelConsumption(int fuelConsumption) {
         System.out.printf("Авто подпадающие под указанный расход - %n");
         for (Car c : cars) {

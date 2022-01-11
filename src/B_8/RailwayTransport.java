@@ -2,6 +2,10 @@ package B_8;
 
 import java.util.ArrayList;
 
+// TODO - почему вагоны не внутри поезда?)
+// TODO - все то же что и по цветам
+//  - это у тебя похоже на станцию поездов типо, а не тип жд транспорта
+//
 public class RailwayTransport {
     private ArrayList<PassengerTrain> passengerTrains = new ArrayList<>();
     private ArrayList<CargoTrain> cargoTrains = new ArrayList<>();
@@ -18,6 +22,8 @@ public class RailwayTransport {
         }
     }
 
+    // TODO - почему вагоны не внутри поезда?)
+    //  - вагоны можно добавить к поезду по идее, а не к станции
     public void addVagons(int comfortLevel, int passengersCapacity) {
         vagons.add(new RailwayCarriege(comfortLevel, passengersCapacity));
     }

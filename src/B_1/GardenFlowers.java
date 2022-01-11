@@ -1,5 +1,8 @@
 package B_1;
 
+// TODO - название должно быть как один цветок,
+//  - наследование от цветка одного, а не от букета
+//  - при наследовании переопредлеить (Override) какие-либо параметры
 public class GardenFlowers extends Flowers {
     private String type = "Garden FLowers";
     private String name;

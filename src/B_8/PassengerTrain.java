@@ -1,5 +1,6 @@
 package B_8;
 
+// TODO - все то же что и по цветам
 public class PassengerTrain extends RailwayTransport {
     private String type = "PassengerTrain";
     private int countOfVagon;

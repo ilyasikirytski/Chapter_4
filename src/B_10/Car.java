@@ -1,5 +1,6 @@
 package B_10;
 
+// TODO - нет наследования, добавить какое-нибудь, можно по типу машин, бренду или еще чему
 public class Car {
     private int fuelConsumption;
     private int carPrice;
