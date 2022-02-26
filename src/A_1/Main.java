@@ -6,10 +6,9 @@ package A_1;
 
 import java.util.ArrayList;
 
-// TODO форматирование кода (пробелы, запятые и тд)
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Word> words = new ArrayList<Word>();
+        ArrayList<Word> words = new ArrayList<>();
         Word word1 = new Word("Hello");
         Word word2 = new Word("My");
         Word word3 = new Word("Name");
@@ -24,8 +23,6 @@ public class Main {
         Text text = new Text();
         text.addSentence(sentence);
         text.setHeader(word1);
-
-        System.out.println("Заголовок :" + text.getHeader());
-        System.out.println("Текст :" + text);
+        System.out.println(text);
     }
 }

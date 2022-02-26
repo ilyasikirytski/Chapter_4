@@ -1,8 +1,5 @@
 package A_1;
 
-// TODO Text это список предложений, а не строки, хедер тоже или слово и предложение + переопределить
-//  toString вместо getHeader\getBody (или переименовать как getString)
-
 import java.util.ArrayList;
 
 public class Text {
@@ -13,10 +10,6 @@ public class Text {
         listOfSentence = new ArrayList<>();
     }
 
-    public Text(ArrayList<Sentence> sentence) {
-        listOfSentence = sentence;
-    }
-
     public void addSentence(Sentence s) {
         listOfSentence.add(s);
     }
@@ -25,14 +18,13 @@ public class Text {
         header = w;
     }
 
-    public Word getHeader() {
-        return header;
-    }
-
     @Override
     public String toString() {
-        return "Text{" +
+        return "Header {" +
+                "header=" + header +
+                "}\n" +
+                "Text {" +
                 "text=" + listOfSentence +
-                '}';
+                "}";
     }
 }
