@@ -1,37 +1,35 @@
 package B_10;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class TaxiPark {
-    private int parkValue;
     private ArrayList<Car> cars = new ArrayList<>();
 
-    // TODO - опять же как и в цветах, добавляешь машину а не ее параметры
-    public void addCar(int fuelConsumption, int carPrice, int maxSpeed) {
-        cars.add(new Car(fuelConsumption, carPrice, maxSpeed));
+    public void addCar(Car car) {
+        cars.add(car);
     }
 
-    // TODO - почему parkValue как параметр класса? а что если несколько раз вызову этот метод? проверь)
     public void getParkValue() {
+        int parkValue = 0;
         for (Car c : cars) {
             parkValue += c.getCarPrice();
         }
         System.out.println("Стоимость таксопарка составляет = " + parkValue + " долларов");
     }
 
-    // TODO должна быть или сортировка внутри или другое название метода
-    public void sortCarByFuelConsumption(int fuelConsumption) {
-        System.out.printf("Авто подпадающие под указанный расход - %n");
+    public void sortCarByFuelConsumption() {
+        System.out.printf("Авто отсортированные по расходу - %n");
+        Collections.sort(cars);
         for (Car c : cars) {
-            if (c.getFuelConsumption() == fuelConsumption)
-                System.out.println(c);
+            System.out.println(c);
         }
     }
 
-    public void findCarBySpeed(int speed) {
+    public void findCarBySpeed(int speed1, int speed2) {
         System.out.printf("%nАвто подпадающие под указанную скорость :%n");
         for (Car c : cars) {
-            if (c.getMaxSpeed() == speed)
+            if (c.getMaxSpeed() >= speed1 && c.getMaxSpeed() <= speed2)
                 System.out.println(c);
         }
     }

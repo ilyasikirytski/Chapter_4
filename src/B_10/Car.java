@@ -1,10 +1,9 @@
 package B_10;
 
-// TODO - нет наследования, добавить какое-нибудь, можно по типу машин, бренду или еще чему
-public class Car {
-    private int fuelConsumption;
-    private int carPrice;
-    private int maxSpeed;
+abstract class Car implements Comparable<Car> {
+    private final int fuelConsumption;
+    private final int carPrice;
+    private final int maxSpeed;
 
     public Car(int fuelConsumption, int carPrice, int maxSpeed) {
         this.fuelConsumption = fuelConsumption;
@@ -25,11 +24,7 @@ public class Car {
     }
 
     @Override
-    public String toString() {
-        return "Car{" +
-                "fuelConsumption=" + fuelConsumption +
-                ", carPrice=" + carPrice +
-                ", maxSpeed=" + maxSpeed +
-                '}';
+    public int compareTo(Car o) {
+        return (getFuelConsumption() - o.getFuelConsumption());
     }
 }
