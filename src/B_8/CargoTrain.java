@@ -1,48 +1,41 @@
 package B_8;
 
-// TODO - все то же что и по цветам
-public class CargoTrain extends RailwayTransport {
-    private String type = "CargoTrain";
-    private int countOfVagon;
-    private int countOfBaggage;
-    private int countOfPassengers;
-    private int comfortLevel;
+// TOD - все то же что и по цветам
+public class CargoTrain extends Train {
 
-    public CargoTrain(int countOfVagon, int comfortLevel, int countOfPassengers, int countOfBaggage) {
-        this.countOfPassengers = countOfPassengers;
-        this.comfortLevel = comfortLevel;
-        this.countOfVagon = countOfVagon;
-        this.countOfBaggage = countOfBaggage;
+    public CargoTrain() {
+        super();
+    }
+
+    public CargoTrain(RailwayCarriege carriege) {
+        super(carriege);
     }
 
     public int getCountOfPassengers() {
-        return countOfPassengers;
+        return super.getCountOfPassengers();
     }
 
     public int getComfortLevel() {
-        return comfortLevel;
-    }
-
-    public String getType() {
-        return type;
+        return super.getComfortLevel();
     }
 
     public int getCountOfVagon() {
-        return countOfVagon;
+        return super.getCountOfVagon();
     }
 
     public int getCountOfBaggage() {
-        return countOfBaggage;
+        return super.getCountOfBaggage();
     }
 
     @Override
     public String toString() {
+        String type = "CargoTrain";
         return "CargoTrain{" +
                 "type='" + type + '\'' +
-                ", countOfVagon=" + countOfVagon +
-                ", countOfBaggage=" + countOfBaggage +
-                ", countOfPassengers=" + countOfPassengers +
-                ", comfortLevel=" + comfortLevel +
+                ", countOfVagon=" + getCountOfVagon() +
+                ", countOfBaggage=" + getCountOfBaggage() +
+                ", countOfPassengers=" + getCountOfPassengers() +
+                ", comfortLevel=" + getComfortLevel() +
                 '}';
     }
 }

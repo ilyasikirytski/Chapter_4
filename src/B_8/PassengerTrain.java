@@ -1,48 +1,41 @@
 package B_8;
 
-// TODO - все то же что и по цветам
-public class PassengerTrain extends RailwayTransport {
-    private String type = "PassengerTrain";
-    private int countOfVagon;
-    private int countOfBaggage;
-    private int countOfPassengers;
-    private int comfortLevel;
+// TOD - все то же что и по цветам
+public class PassengerTrain extends Train {
 
-    public PassengerTrain(int countOfVagon, int comfortLevel, int countOfPassengers, int countOfBaggage) {
-        this.countOfPassengers = countOfPassengers;
-        this.comfortLevel = comfortLevel;
-        this.countOfVagon = countOfVagon;
-        this.countOfBaggage = countOfBaggage;
+    public PassengerTrain() {
+        super();
     }
 
-    public int getComfortLevel() {
-        return comfortLevel;
+    public PassengerTrain(RailwayCarriege carriege) {
+        super(carriege);
     }
 
     public int getCountOfPassengers() {
-        return countOfPassengers;
+        return super.getCountOfPassengers();
     }
 
-    public String getType() {
-        return type;
+    public int getComfortLevel() {
+        return super.getComfortLevel();
     }
 
     public int getCountOfVagon() {
-        return countOfVagon;
+        return super.getCountOfVagon();
     }
 
     public int getCountOfBaggage() {
-        return countOfBaggage;
+        return super.getCountOfBaggage();
     }
 
     @Override
     public String toString() {
+        String type = "PassengerTrain";
         return "PassengerTrain{" +
                 "type='" + type + '\'' +
-                ", countOfVagon=" + countOfVagon +
-                ", countOfBaggage=" + countOfBaggage +
-                ", countOfPassengers=" + countOfPassengers +
-                ", comfortLevel=" + comfortLevel +
+                ", countOfVagon=" + getCountOfVagon() +
+                ", countOfBaggage=" + getCountOfBaggage() +
+                ", countOfPassengers=" + getCountOfPassengers() +
+                ", comfortLevel=" + getComfortLevel() +
                 '}';
     }
 }

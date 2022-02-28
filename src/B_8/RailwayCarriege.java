@@ -1,13 +1,19 @@
 package B_8;
 
-// TODO - почему вагоны не внутри поезда?)
-public class Vagons {
-    private int comfortLevel;
-    private int passengersCapacity;
+public class RailwayCarriege implements Comparable<RailwayCarriege> {
+    private final int comfortLevel;
+    private final int passengersCapacity;
+    private int countOfBaggage;
 
-    public Vagons(int comfortLevel, int passengersCapacity) {
+    public RailwayCarriege(int comfortLevel, int passengersCapacity) {
         this.comfortLevel = comfortLevel;
         this.passengersCapacity = passengersCapacity;
+    }
+
+    public RailwayCarriege(int comfortLevel, int passengersCapacity, int countOfBaggage) {
+        this.comfortLevel = comfortLevel;
+        this.passengersCapacity = passengersCapacity;
+        this.countOfBaggage = countOfBaggage;
     }
 
     public int getComfortLevel() {
@@ -18,11 +24,20 @@ public class Vagons {
         return passengersCapacity;
     }
 
+    public int getCountOfBaggage() {
+        return countOfBaggage;
+    }
+
     @Override
     public String toString() {
-        return "Vagons{" +
+        return "RailwayCarriage{" +
                 "comfortLevel=" + comfortLevel +
                 ", passengersCapacity=" + passengersCapacity +
                 '}';
+    }
+
+    @Override
+    public int compareTo(RailwayCarriege o) {
+        return (getComfortLevel() - o.getComfortLevel());
     }
 }
