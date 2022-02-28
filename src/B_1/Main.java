@@ -11,12 +11,10 @@ package B_1;
 import java.util.Scanner;
 
 public class Main {
-    // TODO вынести каждый case в отдельную функцию
-    //  - зачем несколько сканнеров? почему с такими странными названияни?
     public static void main(String[] args) {
-        Flowers flowers = new Flowers();
+        Bouquet bouquet = new Bouquet();
         Scanner scanner = new Scanner(System.in);
-        int selection = scanner.nextInt();
+        int selection = 0;
 
         while (selection != 99) {
             System.out.println("выберите действие : " +
@@ -29,46 +27,69 @@ public class Main {
 
             switch (selection) {
                 case 1: {
-                    System.out.println("Введите через пробел 'Название цветка', " +
-                            "'Длинну стебля - цифру', " +
-                            "'уровень свежести - цифру', " +
-                            "'цену' - цифру");
-                    Scanner in1 = new Scanner(System.in);
-                    String name = in1.next();
-                    int stemLength = in1.nextInt();
-                    int freshnessLevel = in1.nextInt();
-                    int price = in1.nextInt();
-                    flowers.addFlower(name, stemLength, freshnessLevel, price);
+                    firstCase(scanner, bouquet);
                     break;
                 }
                 case 2: {
-                    flowers.printAllFlowers();
+                    secondCase(bouquet);
                     break;
                 }
                 case 3: {
-                    System.out.println("Введите через пробел 'Длинну стебля От..' | 'длинну стебля до..'");
-                    Scanner in3 = new Scanner(System.in);
-                    int stemLengthFrom = in3.nextInt();
-                    int stemLengthTo = in3.nextInt();
-                    flowers.sortFlowersByStemLength(stemLengthFrom, stemLengthTo);
+                    thirdCase(scanner, bouquet);
                     break;
                 }
                 case 4: {
-                    System.out.println("Введите уровень свежести");
-                    Scanner in4 = new Scanner(System.in);
-                    int freshnessLevel = in4.nextInt();
-                    flowers.sortFlowersByFreshnessLevel(freshnessLevel);
+                    fourthCase(bouquet);
                     break;
                 }
                 case 99: {
-                    System.out.println("Bye bye");
+                    printOutOfProgram();
                     break;
                 }
                 default: {
-                    System.out.println("Вы ввели неверный параметр");
+                    printError();
                     break;
                 }
             }
         }
+    }
+
+    public static void firstCase(Scanner scanner, Bouquet bouquet) {
+        System.out.println("Введите через пробел 'Название цветка', " +
+                "'Длинну стебля - цифру', " +
+                "'уровень свежести - цифру', " +
+                "'цену' - цифру");
+        String name = scanner.next();
+        int stemLength = scanner.nextInt();
+        int freshnessLevel = scanner.nextInt();
+        int price = scanner.nextInt();
+        if (stemLength > 20) {
+            bouquet.addFlower(new GardenFlower(name, stemLength, freshnessLevel, price));
+        } else {
+            bouquet.addFlower(new WildFlower(name, stemLength, freshnessLevel, price));
+        }
+    }
+
+    public static void secondCase(Bouquet bouquet) {
+        bouquet.printAllFlowers();
+    }
+
+    public static void thirdCase(Scanner scanner, Bouquet bouquet) {
+        System.out.println("Введите через пробел 'Длинну стебля От..' | 'длинну стебля до..'");
+        int stemLengthFrom = scanner.nextInt();
+        int stemLengthTo = scanner.nextInt();
+        bouquet.findFlowersInStemLengthRange(stemLengthFrom, stemLengthTo);
+    }
+
+    public static void fourthCase(Bouquet bouquet) {
+        bouquet.sortFlowersByFreshnessLevel();
+    }
+
+    public static void printOutOfProgram() {
+        System.out.println("Bye bye");
+    }
+
+    public static void printError() {
+        System.out.println("Вы ввели неверный параметр");
     }
 }
