@@ -1,43 +1,37 @@
 package Kot_B_10
 
 class KotTaxiPark {
-    // TODO почему public?
-    var parkValue = 0
-    var arrayCar: ArrayList<KotCar> = ArrayList()
+    // TOD почему public?
+    private var arrayCar: ArrayList<KotCar> = ArrayList()
 
-    // TODO можно заменить на - parkValue = arrayCar.sumOf { kotCar: KotCar -> kotCar.carPrice }
+    // TOD можно заменить на - parkValue = arrayCar.sumOf { kotCar: KotCar -> kotCar.carPrice }
     //  или даже на - parkValue = arrayCar.sumOf(KotCar::carPrice)
-    fun getParkValue() {
-        for (c in arrayCar) {
-            // TODO оператор `+=` ?
-            parkValue = parkValue + c.carPrice
-        }
-        println("KOT Стоимость таксопарка составляет = $parkValue долларов")
-    }
+    fun getParkValue() = println("KOT Стоимость таксопарка составляет = ${arrayCar.sumOf { it.carPrice }} долларов")
 
-    // TODO - тоже что и в цветах, создаешь объект прямо в методе
+    // TOD - тоже что и в цветах, создаешь объект прямо в методе
     //  - можно заменить на arrayCar += KotCar
 
-    fun addCar(fuelConsumption: Int, carPrice: Int, maxSpeed: Int) {
-        arrayCar += KotCar(fuelConsumption, carPrice, maxSpeed)
+    fun addCar(kotCar: KotCar) {
+        arrayCar += kotCar
     }
 
-    // TODO можно заменить на
+    // TOD можно заменить на
     //  - arrayCar.filter { it.fuelConsumption == fuelConsumption }
     //            .forEach(::println)
     //  - или на arrayCar.filter { it.fuelConsumption == fuelConsumption }
     //                  .forEach { println(it) }
-    fun sortCarByFuelConsumption(fuelConsumption: Int) {
+    fun sortCarByFuelConsumption() {
         println("KOT Авто подпадающие под указанный расход - ")
+        arrayCar.sort()
         for (c in arrayCar) {
-            if (c.fuelConsumption == fuelConsumption) println(c)
+            println(c)
         }
     }
 
-    fun findCarBySpeed(speed: Int) {
+    fun findCarBySpeed(speed1: Int, speed2 : Int) {
         println("KOT  Авто подпадающие под указанную скорость :")
         for (c in arrayCar) {
-            if (c.maxSpeed == speed) println(c)
+            if (c.maxSpeed in speed1..speed2) println(c)
         }
     }
 }
