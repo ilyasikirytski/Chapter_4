@@ -1,14 +1,9 @@
 package B_8;
 
-// TOD - все то же что и по цветам
 public class CargoTrain extends Train {
 
     public CargoTrain() {
         super();
-    }
-
-    public CargoTrain(RailwayCarriege carriege) {
-        super(carriege);
     }
 
     public int getCountOfPassengers() {
