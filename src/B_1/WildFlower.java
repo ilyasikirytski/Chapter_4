@@ -1,6 +1,5 @@
 package B_1;
 
-//  - при наследовании переопредлеить (Override) какие-либо параметры
 public class WildFlower extends Flower {
 
     public WildFlower(String name, int stemLength, int freshnessLevel, int price) {
