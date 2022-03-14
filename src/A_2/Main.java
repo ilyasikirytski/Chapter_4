@@ -23,6 +23,6 @@ public class Main {
         car.checkWheels();
         car.changeWheel(new Wheel(16), 3);
         car.checkWheels();
-        car.getCarInfo();
+        car.printCarInfo();
     }
 }

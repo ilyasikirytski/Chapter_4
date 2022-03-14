@@ -40,7 +40,7 @@ public class Auto {
         System.out.println("Колесо поменяно!");
     }
 
-    public void getCarInfo() {
+    public void printCarInfo() {
         System.out.printf("Марка авто: %s%n" +
                 "Мощность: %s%n" +
                 "Объём бака: %s%n", brand, engine.getHorsePower(), countOfFuel);
