@@ -14,8 +14,8 @@ public class PassengerTrain extends Train {
         return super.getComfortLevel();
     }
 
-    public int getCountOfVagon() {
-        return super.getCountOfVagon();
+    public int getCountOfWagon() {
+        return super.getCountOfWagon();
     }
 
     public int getCountOfBaggage() {
@@ -27,7 +27,7 @@ public class PassengerTrain extends Train {
         String type = "PassengerTrain";
         return "PassengerTrain{" +
                 "type='" + type + '\'' +
-                ", countOfVagon=" + getCountOfVagon() +
+                ", countOfVagon=" + getCountOfWagon() +
                 ", countOfBaggage=" + getCountOfBaggage() +
                 ", countOfPassengers=" + getCountOfPassengers() +
                 ", comfortLevel=" + getComfortLevel() +

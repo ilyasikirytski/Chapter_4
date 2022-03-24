@@ -1,6 +1,8 @@
 package Kot_B_10
-
-data class KotTaxiPark(var kotCar: KotCar? = null) {
+/*
+data класс не нужен или он должен быть похож как "kotCar"
+ */
+class KotTaxiPark() {
     private var arrayCar: ArrayList<KotCar> = ArrayList()
 
     fun getParkValue() = println("KOT Стоимость таксопарка составляет = ${arrayCar.sumOf { it.carPrice }} долларов")

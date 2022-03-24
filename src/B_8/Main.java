@@ -7,6 +7,8 @@
 
 package B_8;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         PassengerTrain passengerTrain = new PassengerTrain();
@@ -21,8 +23,14 @@ public class Main {
         cargoTrain.sortVagonsByComfort();
         passengerTrain.sortVagonsByPassengersCapacity();
         cargoTrain.sortVagonsByPassengersCapacity();
-        passengerTrain.getTotalCountOfPassengers();
-        cargoTrain.getTotalCountOfPassengers();
+        passengerTrain.printTotalCountOfPassengers();
+        cargoTrain.printTotalCountOfPassengers();
+
+        ArrayList<Train> listOfTrains = new ArrayList<>();
+        listOfTrains.add(passengerTrain);
+        listOfTrains.add(cargoTrain);
+        Generic generic = new Generic();
+        System.out.println("Общая численность багажа всех поездов" + generic.sumOfBaggage(listOfTrains));
     }
 }
 

@@ -5,18 +5,18 @@ import java.util.Comparator;
 
 abstract class Train {
 
-    private final ArrayList<RailwayCarriege> carrieges = new ArrayList<>();
+    private final ArrayList<RailwayCarriege> carriages = new ArrayList<>();
 
     public Train() {
     }
 
-    public int getCountOfVagon() {
-        return carrieges.size();
+    public int getCountOfWagon() {
+        return carriages.size();
     }
 
     public int getCountOfBaggage() {
         int countOfBaggage = 0;
-        for (RailwayCarriege carriege : carrieges) {
+        for (RailwayCarriege carriege : carriages) {
             countOfBaggage += carriege.getCountOfBaggage();
         }
         return countOfBaggage;
@@ -24,7 +24,7 @@ abstract class Train {
 
     public int getCountOfPassengers() {
         int countOfPassengers = 0;
-        for (RailwayCarriege carriege : carrieges) {
+        for (RailwayCarriege carriege : carriages) {
             countOfPassengers += carriege.getPassengersCapacity();
         }
         return countOfPassengers;
@@ -32,40 +32,34 @@ abstract class Train {
 
     public int getComfortLevel() {
         int comfortLevel = 0;
-        for (RailwayCarriege carriege : carrieges) {
+        for (RailwayCarriege carriege : carriages) {
             comfortLevel += carriege.getComfortLevel();
         }
         return comfortLevel;
     }
 
     public void addVagons(RailwayCarriege carriege) {
-        this.carrieges.add(carriege);
+        this.carriages.add(carriege);
     }
 
     public void sortVagonsByComfort() {
         System.out.printf("----------------------------------------%nВагоны отсортированы по уровеню комфорта :%n");
-        carrieges.sort(Comparator.comparing(RailwayCarriege::getComfortLevel));
+        carriages.sort(Comparator.comparing(RailwayCarriege::getComfortLevel));
         printSort();
     }
 
     public void sortVagonsByPassengersCapacity() {
         System.out.printf("----------------------------------------%nВагоны отсортированы по вместительности :%n");
-        carrieges.sort(Comparator.comparing(RailwayCarriege::getPassengersCapacity));
+        carriages.sort(Comparator.comparing(RailwayCarriege::getPassengersCapacity));
         printSort();
     }
 
-    public void getTotalCountOfPassengers() {
-        int totalCountOfPassengers = 0;
-        int totalCountOfBaggage = 0;
-        for (RailwayCarriege carriege : carrieges) {
-            totalCountOfPassengers += carriege.getPassengersCapacity();
-            totalCountOfBaggage += carriege.getCountOfBaggage();
-        }
-        System.out.printf("Общая чиссленность пассажиров поездa: %s и багажа: %s \n", totalCountOfPassengers, totalCountOfBaggage);
+    public void printTotalCountOfPassengers() {
+        System.out.printf("Общая чиссленность пассажиров поездa: %s и багажа: %s \n", getCountOfPassengers(), getCountOfBaggage());
     }
 
     private void printSort() {
-        for (RailwayCarriege carriege : carrieges) {
+        for (RailwayCarriege carriege : carriages) {
             System.out.println(carriege);
         }
     }
