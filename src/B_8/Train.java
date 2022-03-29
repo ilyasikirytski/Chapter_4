@@ -1,7 +1,6 @@
 package B_8;
 
-import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.*;
 
 abstract class Train {
 
@@ -15,27 +14,15 @@ abstract class Train {
     }
 
     public int getCountOfBaggage() {
-        int countOfBaggage = 0;
-        for (RailwayCarriege carriege : carriages) {
-            countOfBaggage += carriege.getCountOfBaggage();
-        }
-        return countOfBaggage;
+        return Collections.sumBy(carriages, RailwayCarriege::getCountOfBaggage);
     }
 
     public int getCountOfPassengers() {
-        int countOfPassengers = 0;
-        for (RailwayCarriege carriege : carriages) {
-            countOfPassengers += carriege.getPassengersCapacity();
-        }
-        return countOfPassengers;
+        return Collections.sumBy(carriages, RailwayCarriege::getPassengersCapacity);
     }
 
     public int getComfortLevel() {
-        int comfortLevel = 0;
-        for (RailwayCarriege carriege : carriages) {
-            comfortLevel += carriege.getComfortLevel();
-        }
-        return comfortLevel;
+        return Collections.sumBy(carriages, RailwayCarriege::getComfortLevel);
     }
 
     public void addVagons(RailwayCarriege carriege) {
@@ -63,4 +50,5 @@ abstract class Train {
             System.out.println(carriege);
         }
     }
+
 }
